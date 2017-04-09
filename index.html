@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+
+    <!-- External CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="view">
+
+    <!-- External AJAX library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Jumbotron code  -->
+    <div class="jumbotron" id="jumbo">
+        <h1 class="text-center">FULL STACK WARRIOR!!!</h1>
+        <h3 class="text-center">I used to be a Full Stack Developer like you.  Then I took an arrow in the knee.</h3>
+        <h3 class="text-center"> Can you finish this quiz in 60 seconds?  Hit "Start" and let's find out!  No Lollygagging!!</h3>
+        <h5 class="text-center">When the time expires, the number of correct and incorrect answers will be displayed.</h5>
+        <h5 class="text-center">Any unanswered questions will be counted as incorrect.</h5>
+    </div>
+
+    <!-- Header showing "Time Remaining", "# Correct", "# Incorrect", and the "Play Again?" and "Start" buttons -->
+    <div class="container">
+        <div class="row" id="header">
+            <div class="col-lg-4">
+                <h3 id="timer"><strong>Time Remaining:  60 seconds</strong></h3>
+            </div>
+            <div id="toggle">
+                <div class="col-lg-2">
+                    <h3 class="text-center" id="right"><strong># Correct:</strong></h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="text-center" id="wrong"><strong># Incorrect:</strong></h3>
+                </div>
+                <div class="col-lg-2 pull-left">
+                    <button class="text-center" id="repeat"><h3><strong>Play Again?</strong></h3></button>
+                </div>
+            </div>
+            <div class="col-lg-1 pull-right">
+                <button class="text-center" id="start"><h3><strong>Start</strong></h3></button>
+            </div>
+        </div>
+        <!-- End of Header section -->
+
+        <!-- Beginning of Quiz Questions section -->
+        <form id="questions" name="questions" action="#">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>1. How many times will this "for" loop run in Javascript?</p>
+                    <p><strong>&nbsp&nbsp&nbsp "for (i = 0; i != 10; i = i + 2)"</strong></p>
+                </div>
+                <div class="col-lg-2">
+                    <select id="dropdown">
+                        <option value="type1">0</option>
+                        <option value="type2">2</option>
+                        <option value="type3">5</option>
+                        <option value="type4">10</option>
+                        <option value="type5">Infinite Loop</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>2. A "CDN" is a:</p>
+                </div>
+                <div class="col-lg-2">
+                    <select id="CDN" size="5">
+                        <option value="wrong1">Canadian Nickel</option>
+                        <option value="wrong2">Cisco Data Network</option>
+                        <option value="wrong3">Compact Disk Node</option>
+                        <option value="right">Content Delivery Network</option>
+                        <option value="wrong5">Corrupted Data Normalizer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>3. "One of the most popular tools in our programming aresenal is the "This" keyword.</p>
+                </div>
+                <div class="col-lg-2">
+                    <fieldset class="optionGroup" id="popular">
+                        <input type="radio" value="yes"/>
+                        <label for="Yes">True</label>
+                        <br>
+                        <input type="radio"  value="no"/>
+                        <label for="false">False</label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>4. HTML handles the ________ of our website.</p>
+                </div>
+                <div class="col-lg-2">
+                    <fieldset class="optionGroup" id="html">
+                        <input type="radio" value="no" />
+                        <label for="Yes">Styling</label>
+                        <br>
+                        <input type="radio" value="yes" />
+                        <label for="Yes">Content</label>
+                        <br>
+                        <input type="radio" value="no" />
+                        <label for="false">Interactivity</label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>5. Javascript handles the ________ of our website.</p>
+                </div>
+                <div class="col-lg-2">
+                    <fieldset class="optionGroup" id="javascript">
+                        <input type="radio" value="no" />
+                        <label for="Yes">Styling</label>
+                        <br>
+                        <input type="radio" value="no" />
+                        <label for="Yes">Content</label>
+                        <br>
+                        <input type="radio" value="yes" />
+                        <label for="false">Interactivity</label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>6. CSS handles the ________ of our website.</p>
+                </div>
+                <div class="col-lg-2">
+                    <fieldset class="optionGroup" id="css">
+                        <input type="radio" value="yes" />
+                        <label for="Yes">Styling</label>
+                        <br>
+                        <input type="radio" value="no" />
+                        <label for="Yes">Content</label>
+                        <br>
+                        <input type="radio" value="no" />
+                        <label for="false">Interactivity</label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>7. CSS stands for what?</p>
+                </div>
+                <div class="col-lg-2">
+                    <input type="text" autofocus required id="cssdef">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>8. HTML stands for what?</p>
+                </div>
+                <div class="col-lg-2">
+                    <input type="text" autofocus required id="htmldef">
+                </div>
+            </div>
+        </form>
+        <!-- End of Quiz Questions section -->
+
+        <!-- External javascript file -->
+       <script src="javascript/app.js" type="text/javascript"></script>
+    </div>
+
+</body>
+</html>

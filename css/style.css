@@ -1,0 +1,42 @@
+        body {
+            background: url("../images/skyrim-1920x1080-13.jpg")no-repeat center bottom fixed;
+            background-size: 1500px 610px;
+
+        }
+
+        .container {
+            background-color: #fff;
+        }
+        
+        .jumbotron {
+            height: 300px;
+        }
+        
+        .row {
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+        
+        #header {
+            border-bottom: 2px solid #ddd;
+        }
+        
+        #right {
+            color: green;
+        }
+        
+        #wrong {
+            color: red;
+        }
+        
+        #repeat #start {
+            display: flex;
+            flex: 1;
+            justify-content: right;
+        }
+        
+        #jumbo {
+            margin-bottom: 0px;
+        }
+    
